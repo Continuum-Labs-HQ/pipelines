@@ -1,6 +1,6 @@
 fastapi==0.111.0
 uvicorn[standard]==0.22.0
-pydantic==2.7.1
+pydantic==2.9.2           # Updated version of pydantic for data validation
 python-multipart==0.0.9
 python-socketio
 grpcio
@@ -9,9 +9,10 @@ passlib==1.7.4
 passlib[bcrypt]
 PyJWT[crypto]
 
-requests==2.32.2
+requests==2.32.3          # Updated version of requests for HTTP requests
 aiohttp==3.9.5
 httpx
+urllib3==2.2.3            # Updated version required by requests and for Retry configuration
 
 # AI libraries
 openai
@@ -23,21 +24,16 @@ vertexai
 pymongo
 peewee
 SQLAlchemy
-boto3
+boto3==1.35.57            # For AWS S3 interactions, if used
 redis
 sqlmodel
 chromadb
 psycopg2-binary
 
-# Observability
-langfuse
-ddtrace
-
 # ML libraries
 torch
 numpy
 pandas
-
 xgboost
 scikit-learn
 
@@ -61,6 +57,11 @@ selenium
 playwright
 beautifulsoup4
 
-# Llama Index for RAG
-llama-index
-llama-index-llms-ollama
+# Additional dependencies
+pymilvus==2.4.9           # For interacting with Milvus
+asyncio==3.4.3            # For asynchronous capabilities, if needed in pipelines
+jsonschema==4.23.0        # For JSON schema validation, if used
+humanize==4.11.0          # For human-readable formatting of data sizes, dates, etc.
+PyMuPDF==1.24.13          # For PDF processing (e.g., extracting text from PDF files)
+python-dotenv==1.0.1      # For loading environment variables from a .env file
+art
